@@ -1,0 +1,41 @@
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const productsCollection = collection(db, "Products");
+      const q = query(productsCollection, orderBy("title"));
+
+      const querySnapshot = await getDocs(q);
+      const productsData = querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setProducts(productsData);
+    };
+
+    fetchProducts();
+  }, []);
+
+  const handleSearchQuery = (query) => {
+    setSearchQuery(query);
+  
+    if (query.length > 0) {
+      const filteredProducts = products.filter(
+        (product) =>
+          product.title.toLowerCase().includes(query.toLowerCase()) ||
+          product.tag.some((tag) =>
+            tag.toLowerCase().includes(query.toLowerCase())
+          )
+      );
+      setSearchResults(filteredProducts);
+    } else {
+      setSearchResults([]);
+    }
+  };
+
+  //this is what displays the product so its 
+  const renderProduct = ({ item }) => {
+    return (
+      <TouchableOpacity onPress={() =>{navigation.navigate("productdetails", item),setSearchResults(''),setSearchQuery('')}}>
+        <Text style={{fontWeight:'bold',fontSize:15,margin:10}}>{item.title}</Text>
+      </TouchableOpacity>
+    );
+  };

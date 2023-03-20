@@ -1,0 +1,24 @@
+        //fetch orders
+        // async function fetchorders() {
+        //   const vidToFind = current.aid;
+        //   const OrdersRef = collection(db, 'Orders');
+        //   // Define the query to retrieve all documents that contain the vid in their cartItems array
+        //   const q = query(OrdersRef, 'cartItems');
+          
+        //   // Execute the query and get a snapshot of the results
+        //   const querySnapshot = await getDocs(q);
+          
+        //  // Define an array to hold all matching cart items
+        //     const matchingCartItems = [];
+
+        //     querySnapshot.forEach(doc => {
+        //       const cartItems = doc.data().cartItems;
+        //       cartItems.forEach(item => {
+        //         if (item.vid === vidToFind) {
+        //           matchingCartItems.push(item);
+        //         }
+        //       });
+        //     });
+
+        //     return matchingCartItems;
+        // }

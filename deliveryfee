@@ -1,0 +1,14 @@
+  const deliveryfee = async () => {
+    await axios
+      .post(
+        `https://us-central1-proservants-d5a2f.cloudfunctions.net/api/pricemodulecalculation?location=${activeAddress}&destination=${vendorlocation}`
+      )
+      .then((res) => {
+        setdelcost(res.data)
+        const d=res.data
+        return d
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };

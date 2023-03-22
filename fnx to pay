@@ -1,0 +1,74 @@
+  const fetchPaymentIntentClientSecret = async () => {
+    const response = await fetch(`${API_URL}/checkouts`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        amount: totalamt,
+      }),
+    });
+    const { clientSecret, error } = await response.json();
+    return { clientSecret, error };
+  };
+
+
+
+  const handlePayPress = async () => {
+    setloading(false);
+    //1.Gather the customer's billing information (e.g., email)
+    if (!cardDetails?.complete || !email) {
+      Alert.alert("Please enter Complete card details and Email");
+      setloading(true);
+      return;
+    }
+    const billingDetails = {
+      email,
+    };
+    //2.Fetch the intent client secret from the backend
+    try {
+      const { clientSecret, error } = await fetchPaymentIntentClientSecret();
+      //2. confirm the payment
+      console.log(error);
+      if (error) {
+        console.log("Unable to process payment");
+        console.log(error);
+      } else {
+        const { paymentIntent, error } = await confirmPayment(clientSecret, {
+          paymentMethodType: "Card",
+          billingDetails: billingDetails,
+        });
+        console.log(paymentIntent);
+        if (error) {
+          alert(`Payment Confirmation Error ${error.message}`);
+        } else if (paymentIntent) {
+          // alert("Payment Successful");
+          //"ExponentPushToken[dY3W1YP7-2iMUokEgbDb3x]"
+          const TokenArray = getTokens();
+          console.log(TokenArray);
+
+          const details = {
+            products: carts,
+          };
+          console.log(details);
+          const data = {
+            to: ["ExponentPushToken[nU8otHCAwee5FRit6qQFoC]"],
+            sound: "default",
+            title: "proservants",
+            body: "New Order",
+            data: { order:carts,customer:userDetails },
+          };
+
+          await axios
+            .post("https://exp.host/--/api/v2/push/send", data)
+            .then((res) => console.log(res.data))
+            .catch((err) => console.log(err));
+          // console.log("Payment successful ", paymentIntent);
+          navigation.navigate("finalscreen");
+          Order(carts,userDetails,totalamt);
+        }
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  };

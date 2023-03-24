@@ -1,0 +1,11 @@
+  const africanProducts=async()=>{
+    const productsRef = collection(db, 'Products');
+    //must be an array to check
+    const q = query(productsRef, where('markets', 'array-contains', 'african'), where('zip_code', 'array-contains', 10001));
+    const querySnapshot = await getDocs(q);
+    const products = [];
+    querySnapshot.forEach((doc) => {
+      products.push({ id: doc.id, ...doc.data() });
+    });
+    return products
+  }

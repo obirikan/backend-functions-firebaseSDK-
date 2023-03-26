@@ -1,0 +1,18 @@
+  // const vendorlocation = props.route.params.data.location;
+  // const data = props.route.params;
+  // console.log({ carts });
+
+  // const increase=(item,index)=>{
+  //     const number=item.Qty+=1
+  //     const  updated =carts.map((items)=>{
+  //         if(items.productName===item.productName){
+  //             return {...items,Qty:number}
+  //         }
+  //         else{
+  //             return items
+  //         }
+  //        })
+
+  //     setcarts(updated)
+
+  // }

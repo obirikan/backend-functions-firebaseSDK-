@@ -9,7 +9,7 @@
   //   const querySnapshot = await getDocs(q);
   //   const allProducts = querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
   
-  //   const apiKey = "AIzaSyBgdZyG5qyyBQoblLSVkjzCNvCQOnOeIiY";
+  //   const apiKey = "";
   //   const distanceMatrixUrl = `https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=${userlat},${userlng}&destinations=`;
   
   //   const products = await Promise.all(allProducts.map(async (product) => {
@@ -41,7 +41,7 @@
   //   const querySnapshot = await getDocs(q);
   //   const allProducts = querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
   
-  //   const apiKey = "AIzaSyBgdZyG5qyyBQoblLSVkjzCNvCQOnOeIiY";
+  //   const apiKey = "";
   //   const distanceMatrixUrl = `https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=${userlat},${userlng}&destinations=`;
   
   //   const products = await Promise.all(allProducts.map(async (product) => {

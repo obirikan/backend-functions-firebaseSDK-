@@ -1,0 +1,41 @@
+  // const asianProducts = async (data) => {
+  //   console.log({data});
+  //   const productsRef = collection(db, "Products");
+  //   const q = query(productsRef, where('markets', 'array-contains', data));
+  //   const querySnapshot = await getDocs(q);
+  //   const allProducts = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+    
+  //   const apiKey = "AIzaSyBgdZyG5qyyBQoblLSVkjzCNvCQOnOeIiY";
+  //   const distanceMatrixUrl = `https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=${current.address[0].location.lat},${current.address[0].location.lng}`;
+  //   const filteredProducts = await Promise.all(
+  //     allProducts.map(async (product) => {
+  //       const response = await axios.get(`${distanceMatrixUrl}&destinations=${product.address.location.lat},${product.address.location.lng}&key=${apiKey}`);
+  //       const distance = response.data.rows[0].elements[0].distance.value;
+  //       return { ...product, distance };
+  //     })
+  //   ).then((productsWithDistance) => productsWithDistance.filter(({ distance }) => distance <= 8046.7));
+    
+  //   console.log(filteredProducts);
+  // };
+  // asianProducts();
+
+  // const asianProducts = async (dat) => {
+  //   console.log({dat});
+  
+  //   const productsRef = collection(db, 'Products');
+  
+  //   const q1 = query(productsRef, where('markets', 'array-contains', dat));
+  //   const q2 = query(productsRef, where('zip_code', 'array-contains', zip));
+  
+  //   const [querySnapshot1, querySnapshot2] = await Promise.all([getDocs(q1), getDocs(q2)]);
+  
+  //   const products = [];
+  
+  //   querySnapshot1.forEach((doc) => {
+  //     if (querySnapshot2.docs.some((d) => d.id === doc.id)) {
+  //       products.push({ id: doc.id, ...doc.data() });
+  //     }
+  //   });
+  // console.log(products)
+  //   return products;
+  // };

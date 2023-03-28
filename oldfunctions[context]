@@ -1,0 +1,62 @@
+  // const asianProducts = async (dat) => {
+  //   const { location } = activeAddress;
+  
+  //   const userlat = location.lat;
+  //   const userlng = location.lng;
+  
+  //   const productsRef = collection(db, "Products");
+  //   const q = query(productsRef, where('markets', 'array-contains', dat));
+  //   const querySnapshot = await getDocs(q);
+  //   const allProducts = querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+  
+  //   const apiKey = "AIzaSyBgdZyG5qyyBQoblLSVkjzCNvCQOnOeIiY";
+  //   const distanceMatrixUrl = `https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=${userlat},${userlng}&destinations=`;
+  
+  //   const products = await Promise.all(allProducts.map(async (product) => {
+  //     const distanceMatrixResponse = await axios.get(`${distanceMatrixUrl}${product.address.location.lat},${product.address.location.lng}&key=${apiKey}`);
+  //     const elements = distanceMatrixResponse.data.rows[0].elements;
+  //        console.log(elements[0].distance.value,'-------------------------------');
+  //     if (elements && elements.length > 0) {
+  //       const distance = elements[0].distance.value;
+  
+  //       if (distance <= 32268) { // filter by 5 miles (or 8046.72 meters)
+  //         console.log(product);
+  //         return product;
+
+  //       }
+  //     }
+  //   }));
+  //   return products.filter(Boolean);
+  // };
+
+
+  // const ReadyToeat = async () => {
+  //   const { location } = activeAddress;
+  
+  //   const userlat = location.lat;
+  //   const userlng = location.lng;
+  
+  //   const productsRef = collection(db, "Products");
+  //   const q = query(productsRef, where('categories', 'array-contains', 'ready to eat'));
+  //   const querySnapshot = await getDocs(q);
+  //   const allProducts = querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+  
+  //   const apiKey = "AIzaSyBgdZyG5qyyBQoblLSVkjzCNvCQOnOeIiY";
+  //   const distanceMatrixUrl = `https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=${userlat},${userlng}&destinations=`;
+  
+  //   const products = await Promise.all(allProducts.map(async (product) => {
+  //     const distanceMatrixResponse = await axios.get(`${distanceMatrixUrl}${product.address.location.lat},${product.address.location.lng}&key=${apiKey}`);
+  //     const elements = distanceMatrixResponse.data.rows[0].elements;
+  //        console.log(elements[0].distance.value,'-------------------------------');
+  //     if (elements && elements.length > 0) {
+  //       const distance = elements[0].distance.value;
+  
+  //       if (distance <= 32268) { // filter by 5 miles (or 8046.72 meters)
+  //         console.log(product);
+  //         return product;
+
+  //       }
+  //     }
+  //   }));
+  //   return products.filter(Boolean);
+  // };

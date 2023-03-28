@@ -1,0 +1,20 @@
+ // const ReadyToeat= async (dat) => {
+  //   console.log({ dat});
+  
+  //   const productsRef = collection(db, 'Products');
+  
+  //   const q1 = query(productsRef, where('categories', 'array-contains', 'ready to eat'));
+  //   const q2 = query(productsRef, where('zip_code', 'array-contains', zip));
+  
+  //   const [querySnapshot1, querySnapshot2] = await Promise.all([getDocs(q1), getDocs(q2)]);
+  
+  //   const products = [];
+  
+  //   querySnapshot1.forEach((doc) => {
+  //     if (querySnapshot2.docs.some((d) => d.id === doc.id)) {
+  //       products.push({ id: doc.id, ...doc.data() });
+  //     }
+  //   });
+  // console.log(products)
+  //   return products;
+  // };

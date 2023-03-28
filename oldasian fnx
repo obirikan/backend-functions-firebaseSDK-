@@ -5,7 +5,7 @@
   //   const querySnapshot = await getDocs(q);
   //   const allProducts = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
     
-  //   const apiKey = "AIzaSyBgdZyG5qyyBQoblLSVkjzCNvCQOnOeIiY";
+  //   const apiKey = "";
   //   const distanceMatrixUrl = `https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=${current.address[0].location.lat},${current.address[0].location.lng}`;
   //   const filteredProducts = await Promise.all(
   //     allProducts.map(async (product) => {

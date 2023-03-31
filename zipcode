@@ -1,0 +1,23 @@
+    // const headers = {
+    //   'Accept': '*/*',
+    //   'Cache-Control':'no-cache',
+    //   'Postman-Token':'<calculated when request is sent>',
+    //   'User-Agent':'PostmanRuntime/7.29.2',
+    //   'Host':'<calculated when request is sent>',
+    //   'Content-Type':'application/json',
+    //   'Accept-Encoding': 'gzip, deflate, br',
+    //   'Connection': 'keep-alive',
+    //   'Content-Length': '<calculated when request is sent>'
+    // };
+
+    // const zipCode = zipcode;
+    // const apiUrl = `http://api.geonames.org/postalCodeLookupJSON?postalcode=${zipcode}&country=us&username=obirikan`;
+    
+    // fetch(apiUrl)
+    //   .then(res => res.json())
+    //   .then(data => {
+    //     console.log(data);
+    //   })
+    //   .catch(err => {
+    //     console.error(err);
+    //   });

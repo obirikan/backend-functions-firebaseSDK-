@@ -1,4 +1,4 @@
-
+//fetch a particular product with a specific field
 const fetchProducts = async () => {
       const db = getFirestore();
       const productsCollection = collection(db, "Products");
